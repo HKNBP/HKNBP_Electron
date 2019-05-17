@@ -13,7 +13,35 @@
   "author": "Source Key",
   "license": "GPL-3.0",
   "devDependencies": {
-    "electron": "^5.0.0-beta.7",
-    "electron-nightly": "^6.0.0-nightly.20190311"
+    "electron": "^5.0.1",
+    "electron-builder": "^20.40.2"
+  },
+  "build": {
+    "appId": "org.sourcekey.hknbp.hknbp_electron",
+    "category": "org.sourcekey.hknbp.hknbp_electron",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
   }
 }

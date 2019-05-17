@@ -22,8 +22,8 @@ function createWindow () {
   mainWindow.setMenu(null)
 
   // and load the index.html of the app.
-  //mainWindow.loadFile("HKNBP_Core/index.html")
-  mainWindow.loadURL("https://hknbp.org")
+  mainWindow.loadFile("HKNBP_Core/index.html")
+  //mainWindow.loadURL("https://hknbp.org")
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
