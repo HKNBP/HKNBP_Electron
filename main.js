@@ -22,8 +22,8 @@ function createWindow () {
   mainWindow.setMenu(null)
 
   // and load the index.html of the app.
-  mainWindow.loadFile("HKNBP_Core/index.html")
-  //mainWindow.loadURL("https://hknbp.org")
+  //mainWindow.loadFile("HKNBP_Core/index.html")
+  mainWindow.loadURL("https://hknbp.org")
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -35,6 +35,11 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+  mainWindow.webContents.on('did-finish-load', function() {
+    var hknbpUWPAppVersion = "0.9-Electron";
+    mainWindow.webContents.executeJavaScript("hknbpCore.appVersion = \""+hknbpUWPAppVersion+"\";");
+  });
 }
 
 // This method will be called when Electron has finished
