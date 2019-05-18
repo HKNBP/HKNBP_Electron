@@ -5,6 +5,8 @@ const {app, BrowserWindow} = require('electron')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
+var hknbpUWPAppVersion = "0.9-Electron";
+
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
@@ -36,8 +38,9 @@ function createWindow () {
     mainWindow = null
   })
 
+  //當Load好個Web
   mainWindow.webContents.on('did-finish-load', function() {
-    var hknbpUWPAppVersion = "0.9-Electron";
+    //設置程式版編號
     mainWindow.webContents.executeJavaScript("hknbpCore.appVersion = \""+hknbpUWPAppVersion+"\";");
   });
 }
