@@ -1,3 +1,17 @@
+/*
+ * HKNBP_Electron is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * HKNBP_Electron is distributed in the hope that it will be useful,
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with HKNBP_Electron.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 
@@ -5,7 +19,7 @@ const {app, BrowserWindow} = require('electron')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-var hknbpUWPAppVersion = "0.9-Electron";
+var hknbpElectronAppVersion = "0.9-Electron";
 
 function createWindow () {
   // Create the browser window.
@@ -41,7 +55,7 @@ function createWindow () {
   //當Load好個Web
   mainWindow.webContents.on('did-finish-load', function() {
     //設置程式版編號
-    mainWindow.webContents.executeJavaScript("hknbpCore.appVersion = \""+hknbpUWPAppVersion+"\";");
+    mainWindow.webContents.executeJavaScript("hknbpCore.appVersion = \""+hknbpElectronAppVersion+"\";");
   });
 }
 
