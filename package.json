@@ -1,47 +1,66 @@
 {
-  "name": "hknbp_core",
+  "name": "HKNBP",
   "version": "1.0.0",
-  "description": "香港網路廣播平台",
+  "description": "香港網路廣播平臺",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
   },
-  "repository": "https://github.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HKNBP"
+  },
+  "homepage": "https://github.com/HKNBP",
   "keywords": [
-    "tv"
+    "tv",
+    "電視",
+    "HKNBP",
+    "香港網路廣播平臺",
+    "港網"
   ],
-  "author": "Source Key",
-  "license": "GPL-3.0",
+  "author": "原匙 <hknbp@sourcekey.org>",
+  "license": {
+    "type": "GPL-3.0",
+    "url": "https://www.gnu.org/licenses/gpl-3.0.html"
+  },
   "devDependencies": {
-    "electron": "^5.0.1",
-    "electron-builder": "^20.40.2"
+    "electron": "^5.0.6",
+    "electron-builder": "^20.44.4",
+    "electron-installer-snap": "^4.0.0",
+    "electron-packager": "^14.0.1"
   },
   "build": {
     "appId": "org.sourcekey.hknbp.hknbp_electron",
-    "category": "org.sourcekey.hknbp.hknbp_electron",
-    "dmg": {
-      "contents": [
-        {
-          "x": 110,
-          "y": 150
-        },
-        {
-          "x": 240,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    },
+    "icon": "logo.png",
     "linux": {
       "target": [
         "AppImage",
-        "deb"
+        "snap",
+        "freebsd"
+      ],
+      "executableName": "hknbp"
+    },
+    "snap": {
+      "grade": "stable",
+      "confinement": "strict",
+      "summary": "TV App"
+    },
+    "mac": {
+      "target": [
+        "dmg"
       ]
     },
     "win": {
-      "target": "squirrel",
-      "icon": "build/icon.ico"
+      "target": [
+        "nsis",
+        "portable",
+        "appx",
+        "msi",
+        "squirrel",
+        "7z"
+      ]
     }
-  }
+  },
+  "dependencies": {}
 }

@@ -26,10 +26,9 @@ function createWindow () {
   mainWindow = new BrowserWindow({
       width: 720,
       height: 405,
-      backgroundColor: '#000',
-      webPreferences: {
-        webSecurity: false
-      }
+      backgroundColor: "#000",
+      icon: "logo.png",
+      webPreferences: {webSecurity: false}
   })
 
   // hide MenuBar
