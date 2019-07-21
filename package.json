@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --x64 --ia32"
+    "build": "electron-builder",
+    "build-32bit": "electron-builder --ia32"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,7 @@
     "港網"
   ],
   "author": "原匙 <hknbp@sourcekey.org>",
-  "license": {
-    "type": "GPL-3.0",
-    "url": "https://www.gnu.org/licenses/gpl-3.0.html"
-  },
+  "license": "GPL-3.0",
   "devDependencies": {
     "electron": "^5.0.6",
     "electron-builder": "^20.44.4",
