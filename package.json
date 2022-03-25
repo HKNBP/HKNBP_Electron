@@ -23,7 +23,7 @@
   "author": "原匙 <hknbp@sourcekey.org>",
   "license": "GPL-3.0",
   "devDependencies": {
-    "electron": "^5.0.6",
+    "electron": "^13.6.6",
     "electron-builder": "^20.44.4",
     "electron-installer-snap": "^4.0.0",
     "electron-packager": "^14.0.1"
